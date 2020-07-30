@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 我的方法：
+        header, footer 不采用弹性盒模型，直接正常写
+        包裹 middle left right 的 container 采用弹性盒模型
+        space-evenly 平分上述盒子 盒子宽度用百分比定义
+        最后给 left 打上 -1 标签即可 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header,
+        .footer {
+            height: 80px;
+            background-color: #1c2431;
+            color: white;
+            font-size: 40px;
+            line-height: 80px;
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            min-height: 130px;
+            justify-content: space-evenly;
+        }
+
+        .middle {
+            width: 70%;
+            background-color: whitesmoke;
+        }
+
+        .left {
+            order: -1;
+            width: 15%;
+            background-color: darkgray;
+        }
+
+        .right {
+            width: 15%;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">#header</div>
+        <div class="container">
+            <div class="middle">#middle</div>
+            <div class="left">#left</div>
+            <div class="right">#right</div>
+        </div>
+        <div class="footer">#footer</div>
+    </div>
+</body>
+
+</html>

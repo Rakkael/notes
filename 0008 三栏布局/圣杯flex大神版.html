@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 思路： header,
+        footer 同样采用普通写法 container为弹性容器 
+        middle left right 使用order排序 
+        middle 使用 flex-grow:1 进行扩展 
+        left right 使用 flex-basis 确定宽度  */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header,
+        .footer {
+            height: 80px;
+            color: white;
+            line-height: 80px;
+            text-align: center;
+            font-size: 40px;
+            background-color: #1c2431;
+        }
+
+        .container {
+            display: flex;
+            background-color: darkred;
+            min-height: 130px;
+        }
+
+        .middle {
+            flex-grow: 1;
+            order: 1;
+            background-color: whitesmoke;
+        }
+
+        .left {
+            flex-basis: 200px;
+            order: 0;
+            background-color: darkgrey;
+        }
+
+        .right {
+            flex-basis: 300px;
+            order: 2;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">#header</div>
+        <div class="container">
+            <div class="middle">#middle</div>
+            <div class="left">#left</div>
+            <div class="right">#right</div>
+        </div>
+        <div class="footer">#footer</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>圣杯布局</title>
+
+    <!-- 思路：
+    header, footer不脱离文档流，正常定义。
+    left middle right 用 float:left脱离文档流
+    再用一个容器进行包裹，然后利用overflow:hidden 清除float
+    使得left middle right在视觉上回到了文档流中
+    再利用 负外边距 让下层的float 回到上层即可 -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .header,
+        .footer {
+            /* height: 100px; */
+            background-color: #1c2431;
+            color: white;
+            text-align: center;
+            font-size: 30px;
+            /* line-height: 100px; */
+        }
+
+        .footer {
+            clear: both;
+        }
+
+        .container {
+            position: relative;
+            background-color: red;
+            padding: 0 200px;
+            overflow: hidden;
+            min-width: 200px;
+        }
+
+        .middle,
+        .left,
+        .right {
+            float: left;
+            min-height: 130px;
+        }
+
+        .middle {
+            width: 100%;
+            background-color: whitesmoke;
+        }
+
+        .left {
+            position: relative;
+            width: 200px;
+            margin-left: -100%;
+            left: -200px;
+            background-color: darkgray;
+        }
+
+        .right {
+            position: relative;
+            width: 200px;
+            margin-left: -200px;
+            right: -200px;
+            background-color: darkgray;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">#header</div>
+        <div class="container">
+            <div class="middle">#main</div>
+            <div class="left">#left</div>
+            <div class="right">#right</div>
+        </div>
+        <div class="footer">#footer</div>
+    </div>
+</body>
+
+</html>
