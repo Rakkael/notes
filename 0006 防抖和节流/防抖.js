@@ -1,7 +1,5 @@
-
-
 var debounce = (() => {
-    let timer = 0;
+    let timer = undefined;
     return (callback, delay) => {
         clearTimeout(timer);
         timer = setTimeout(callback, delay);

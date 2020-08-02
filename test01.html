@@ -3,33 +3,71 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 </head>
 
-<body onclick="bodyClick()">
-
-    <div onclick="divClick()">
-        <button onclick="btn()">
-            <p onclick="p()">点击冒泡</p>
-        </button>
+<body>
+    <div id="app">
+        <login></login>
     </div>
+
     <script>
+        var login = {
+            template: '<h1>{{childMsg}}}</h1>',
+            data() {
+                return {
+                    childMsg: 'child'
+                }
+            },
+            beforeCreate: function () {
+                debugger;
+                alert("子组件的beforeCreate")
+            },
+            created: function () {
+                debugger
+                alert("子组件的created")
+            },
+            beforeMount: function () {
+                debugger
+                alert("子组件的beforeMount")
+            },
+            mounted: function () {
+                debugger
+                alert("子组件的mounted")
+            }
+        }
 
-        function p() {
-            console.log('p标签被点击')
-        }
-        function btn() {
-            console.log("button被点击")
-        }
-        function divClick(event) {
-            console.log('div被点击');
-        }
-        function bodyClick() {
-            console.log('body被点击')
-        }
-
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                fatherMsg: "father"
+            },
+            methods: {},
+            components: {
+                login
+            },
+            beforeCreate: function () {
+                debugger
+                alert("父组件的beforeCreate")
+            },
+            created: function () {
+                debugger
+                alert("父组件的created")
+            },
+            beforeMount: function () {
+                debugger
+                alert("父组件的beforeMount")
+            },
+            mounted: function () {
+                debugger
+                alert("父组件的mounted")
+            },
+        });
     </script>
-
 </body>
 
 </html>
