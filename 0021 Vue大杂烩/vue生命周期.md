@@ -1,3 +1,5 @@
+https://www.cnblogs.com/AlbertP/p/10754880.html
+
 beforeCreate（创建前） 在数据观测和初始化事件还未开始
 
 created（创建后） 完成数据观测，属性和方法的运算，初始化事件，$el属性还没有显示出来
