@@ -24,5 +24,3 @@ A.b(); // 1  改新不改旧
 B.c.a1 = '1a';
 console.log(A.c);   // 第二层 改新会改旧
 console.log(B.c);
-
-
