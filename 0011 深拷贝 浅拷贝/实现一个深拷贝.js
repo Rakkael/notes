@@ -21,7 +21,7 @@ function deepClone(obj) {
 function deep(obj) {
     //判断拷贝的要进行深拷贝的是数组还是对象，是数组的话进行数组拷贝，对象的话进行对象拷贝
     var objClone = Array.isArray(obj) ? [] : {};
-    //进行深拷贝的不能为空，并且是对象或者是
+    //进行深拷贝的不能为空，并且是对象或者是数组
     if (obj && typeof obj === "object") {
         for (key in obj) {
             if (obj.hasOwnProperty(key)) {
@@ -54,11 +54,11 @@ function deepClone(obj) {
 function deepClone(obj) {
     let objClone = Array.isArray(obj) ? [] : {};
     if (obj && typeof obj === 'object') {
-        for (let key in obj) {
-            if (obj.hasOwnProperty(key)) {
-                objClone[key] = deepClone(obj[key]);
+        for (let item in obj) {
+            if (obj.hasOwnProperty(item)) {
+                objClone[item] = deepClone(obj[item]);
             } else {
-                objClone[key] = obj[key];
+                objClone[item] = obj[item];
             }
         }
     }

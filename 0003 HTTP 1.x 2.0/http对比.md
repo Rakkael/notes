@@ -29,8 +29,9 @@ http1.x 对比 http2.0
 4、服务器推送  一个请求可以同时发送多个文件 请求html文件 服务器自主推送css
 
 http 对比 https
-https是基于http2.0的 所以拥有以上特性
-此外
+~~https是基于http2.0的 所以拥有以上特性~~ 错了
+改为: http2.0强制要求使用https
+https是 http + ssl + tls 并不是一个新的版本, 94年就有了
 https请求需要CA证书，是加密传输。
 https的连接方式和需要的端口不同。
 https可以防止运营商劫持。
