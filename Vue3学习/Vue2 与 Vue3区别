@@ -1,0 +1,4 @@
+90%的写法是一样的
+Vue3的template支持多个标签 vue2中只能放一个
+vue3主函数是createApp() vue2中是new vue()
+createApp(组件) createApp中接收的是一个组件 new vue({template,render}) new vue中接收的是一个对象
