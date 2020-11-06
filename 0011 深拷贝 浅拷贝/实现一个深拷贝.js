@@ -24,7 +24,7 @@ function deep(obj) {
     //进行深拷贝的不能为空，并且是对象或者是数组
     if (obj && typeof obj === "object") {
         for (key in obj) {
-            if (obj.hasOwnProperty(key)) {
+            if (obj.hasOwnProperty(key)) { // hasOwnProperty 可以用来忽略继承属性
                 if (obj[key] && typeof obj[key] === "object") {
                     objClone[key] = deep(obj[key]);
                 } else {
@@ -37,28 +37,15 @@ function deep(obj) {
 }
 
 function deepClone(obj) {
-    let objClone = Array.isArray(obj) ? [] : {};
-    if (obj && typeof obj === 'object') {
+    var objClone = Array.isArray(obj) ? [] : {};
+    if (obj && obj === 'object') {
         for (let key in obj) {
             if (obj.hasOwnProperty(key)) {
-                objClone[key] = deepClone(obj[key]);
-            } else {
-                objClone[key] = obj[key];
-            }
-        }
-    }
-    return objClone;
-}
-
-
-function deepClone(obj) {
-    let objClone = Array.isArray(obj) ? [] : {};
-    if (obj && typeof obj === 'object') {
-        for (let item in obj) {
-            if (obj.hasOwnProperty(item)) {
-                objClone[item] = deepClone(obj[item]);
-            } else {
-                objClone[item] = obj[item];
+                if (obj[key] && typeof obj[key] === 'object') {
+                    objClone[key] = deepClone(obj[key]);
+                } else {
+                    objClone[key] = obj[key];
+                }
             }
         }
     }

@@ -10,3 +10,6 @@
 把一个变量以数字进行输出
 var a = '1';
 console.log(~~a === 1); // true
+
+for of 遍历value
+for in 遍历key

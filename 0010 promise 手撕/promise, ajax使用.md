@@ -42,3 +42,5 @@ new Promise((resolve, reject) => {
     .catch(cat => {
         console.log('catched an error');
     })
+
+
