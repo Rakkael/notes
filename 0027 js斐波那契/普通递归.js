@@ -11,3 +11,4 @@ function fun(n) { // 输出从0开始到第n项
     }
 }
 fun(1)
+
