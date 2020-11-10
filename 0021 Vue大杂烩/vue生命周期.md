@@ -1,7 +1,7 @@
 https://www.cnblogs.com/AlbertP/p/10754880.html
 https://segmentfault.com/a/1190000014640577
 
-beforeCreate（创建前） 
+beforeCreate（创建前）
 ----------- 
 完成实例初始化 data computed watch methods上的方法和数据均不能访问
 

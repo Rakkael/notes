@@ -6,9 +6,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    body,
+    html {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    header {
+        height: 10vh;
+        width: 100vw;
+        background-color: black;
+        color: white;
+    }
+
+    footer {
+        height: 200px;
+        width: 100vw;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        height: 70vh;
+    }
+
+    .container .main {
+        flex-grow: 1;
+        order: 2;
+        background-color: darkgray;
+    }
+
+    .container .left {
+        order: 1;
+        width: 20vw;
+        background-color: darkslateblue;
+    }
+</style>
 
 <body>
-
+    <div class="wrapper">
+        <header>#HEADER</header>
+        <div class="container">
+            <div class="main">#MAIN</div>
+            <div class="left">#LEFT</div>
+        </div>
+        <footer>#FOOTER</footer>
+    </div>
 </body>
 
 </html>
